@@ -1,1 +1,1 @@
-web: gunicorn CursoDjango02.wgsi --log-file -
+web: gunicorn CursoDjango02.wsgi --log-file -
