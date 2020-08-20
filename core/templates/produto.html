@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% load bootstrap4 %} <!-- carrega bootstrap -->
+    {% bootstrap_css %} <!-- carrega arquivos css do bootstrap -->
+    <meta charset="UTF-8">
+    <title>Produto</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Produto</h1>
+        </div>
+        <div>
+            {% bootstrap_messages %}  <!-- define o local onde as mensagens do sistema serão mostradas -->
+        </div>
+        <div>
+            <form action="{% url 'produto' %}" method="post" class="form" autocomplete="off" enctype="multipart/form-data">
+                {% csrf_token %} <!-- adiciona token de validação do form -->
+                {% bootstrap_form form_produto %} <!-- gera formulário com base na classe criada no arquivo forms.py -->
+                {% buttons %}
+                    <button type="submit" class="btn btn-primary">Adicionar Produto</button>
+                {% endbuttons %}
+            </form>
+        </div>
+        <br><br><br>
+    </div>
+
+    {% bootstrap_javascript jquery='full' %}
+</body>
+</html>

@@ -1,0 +1,1 @@
+web: gunicorn CursoDjango02.wgsi --log-file -
