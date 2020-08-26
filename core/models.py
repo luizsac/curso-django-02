@@ -3,6 +3,7 @@ from stdimage.models import StdImageField
 from django.db.models import signals  # envia sinal sobre modificações no modelo "observado"
 from django.template.defaultfilters import slugify  # cria endereço personalizado com base no nome do objeto
 
+
 class Base(models.Model):
     criado = models.DateField('Data de Criação', auto_now_add=True)
     modificado = models.DateField('Data de Modificação', auto_now=True)

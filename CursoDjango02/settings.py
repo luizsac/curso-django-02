@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '=9u+42g^+(3y*!mie573o!)=+%swq9dg64-j1k^lufd7i(adz*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'CursoDjango02.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-"""  # usado durante desenvolvimento, trocado por postgree na publicação, pois heroku não suporta mysql gratuitamente
+# usado durante desenvolvimento, trocado por postgree na publicação, pois heroku não suporta mysql gratuitamente
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -88,9 +88,9 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-"""
 
-DATABASES = {'default': dj_database_url.config()}
+# configuração de banco de dados para o heroku
+# DATABASES = {'default': dj_database_url.config()}
 
 
 # Password validation
@@ -136,7 +136,7 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # configurações do emulador de servidor de email
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 """
 # configurações de servidor de email
