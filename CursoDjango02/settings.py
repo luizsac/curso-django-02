@@ -77,7 +77,16 @@ WSGI_APPLICATION = 'CursoDjango02.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# usado durante desenvolvimento, trocado por postgree na publicação, pois heroku não suporta mysql gratuitamente
+# configuração padrão
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+# usando mysql
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -88,8 +97,9 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+"""
 
-# configuração de banco de dados para o heroku
+# configuração de banco de dados para o heroku, postgresql
 # DATABASES = {'default': dj_database_url.config()}
 
 

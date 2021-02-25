@@ -19,7 +19,7 @@ def contato(request):
             # assunto = form_contato.cleaned_data['assunto']
             # mensagem = form_contato.cleaned_data['mensagem']
 
-            #print(f'{nome}, {email}, {assunto}, {mensagem}')
+            # print(f'{nome}, {email}, {assunto}, {mensagem}')
 
             form_contato.send_mail()
 
